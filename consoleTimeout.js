@@ -10,12 +10,13 @@ const arr = [
 ]
 const run = async (_arr) => {
   for (let i = 0; i < _arr.length; i++) {
-    await new Promise((resolve) => {
-      setTimeout(() => {
-        console.log(_arr[i].name);
-        resolve();
-      }, _arr[i].timeout);
-    });
+    console.log(
+      await new Promise((resolve) => {
+        setTimeout(() => {
+          resolve(_arr[i].name);
+        }, _arr[i].timeout);
+      })
+    )
   }
 }
 
