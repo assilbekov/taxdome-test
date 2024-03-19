@@ -1,8 +1,4 @@
 function reduceRight(arr, callback, initAcc) {
-  if (arr.length === 0) {
-    return initAcc;
-  }
-
   let startIndex = arr.length - 1;
   let acc = initAcc;
 
