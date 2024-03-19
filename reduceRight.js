@@ -1,6 +1,6 @@
 function reduceRight(arr, callback, initAcc) {
-  let startIndex = arr.length - 1;
-  let acc = initAcc;
+  let startIndex = initAcc === undefined ? arr.length - 2 : arr.length - 1;
+  let acc = initAcc ?? arr[arr.length - 1];
 
   for (let i = startIndex; i >= 0; i--) {
     acc = callback(acc, arr[i], i, arr);
